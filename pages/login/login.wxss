@@ -1,0 +1,89 @@
+/* 整体容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50rpx;
+}
+
+/* 标题样式 */
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 60rpx;
+}
+
+/* 输入框容器 - 统一尺寸 */
+.input-wrapper {
+  width: 80%;
+  height: 80rpx;               /* 固定高度，确保所有输入框高度一致 */
+  display: flex;
+  align-items: center;
+  border: 1rpx solid #ddd;
+  border-radius: 8rpx;
+  padding: 0 20rpx;            /* 上下内边距设为0，左右20rpx */
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+}
+
+/* 图标样式 */
+.input-wrapper .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+/* 输入框样式，保证高度一致 */
+.input-wrapper .input {
+  flex: 1;
+  font-size: 28rpx;
+  height: 100%;
+  line-height: 80rpx;          /* 行高与容器高度一致，使文字垂直居中 */
+}
+
+/* 验证码输入框组 - 继承 input-wrapper 样式 */
+.verify-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 验证码按钮样式 */
+.verify-btn {
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #1aad19;
+  padding: 0 20rpx;            /* 水平内边距 */
+  border-radius: 10rpx;
+  height: 100%;                /* 与输入框容器同高 */
+  line-height: 80rpx;          /* 行高同容器高度，保证文字居中 */
+}
+
+.verify-btn[disabled] {
+  background-color: #ccc;
+}
+
+/* 主操作按钮 */
+.login-btn {
+  width: 80%;
+  background-color: #1aad19;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+/* 底部操作区域 */
+.bottom-actions {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0rpx;
+}
+
+.bottom-btn {
+  font-size: 26rpx;
+  color: #1aad19;
+}

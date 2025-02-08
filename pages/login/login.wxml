@@ -1,0 +1,42 @@
+<view class="container">
+  <!-- 标题 -->
+  <text class="title">365生活助手</text>
+
+  <!-- 账号输入框：始终显示 -->
+  <view class="input-wrapper">
+    <image src="/images/login/user_icon.png" class="icon"></image>
+    <input class="input" model:value="{{account}}" placeholder="{{ loginMode === 'password' ? '请输入账号' : '请输入手机号码' }}" maxlength="{{ loginMode === 'password' ? 64 : 11}}" />
+  </view>
+
+  <!-- 验证码输入框：在【验证码登录】和【注册账号】模式下显示 -->
+  <view class="input-wrapper verify-wrapper" wx:if="{{loginMode === 'verify' || loginMode === 'register'}}">
+    <image src="/images/login/verify_icon.png" class="icon"></image>
+    <input class="input" model:value="{{verifyCode}}" placeholder="请输入验证码" />
+    <button class="verify-btn" bindtap="getVerifyCode" disabled="{{countdown > 0}}">
+      {{countdown > 0 ? countdown + 's重试' : '获取验证码'}}
+    </button>
+  </view>
+
+  <!-- 密码输入框：在【密码登录】和【注册账号】模式下显示 -->
+  <view class="input-wrapper" wx:if="{{loginMode === 'password' || loginMode === 'register'}}">
+    <image src="/images/login/password_icon.png" class="icon"></image>
+    <input class="input" model:value="{{password}}" placeholder="请输入密码" password="true" />
+  </view>
+
+  <!-- 主操作按钮 -->
+  <button class="login-btn" bindtap="onSubmit">
+    {{ loginMode === 'register' ? '注册/登录' : '登录' }}
+  </button>
+
+  <!-- 底部操作按钮 -->
+  <view class="bottom-actions">
+    <!-- 左下角按钮：\n• 当模式为密码登录时显示“验证码登录”，其他模式显示“密码登录” -->
+    <text class="bottom-btn" bindtap="switchToLeft">
+      {{ loginMode === 'password' ? '验证码登录' : '密码登录' }}
+    </text>
+    <!-- 右下角按钮：\n• 当模式为注册账号时显示“验证码登录”，其他模式显示“注册账号” -->
+    <text class="bottom-btn" bindtap="switchToRight">
+      {{ loginMode === 'register' ? '验证码登录' : '注册账号' }}
+    </text>
+  </view>
+</view>
