@@ -1,0 +1,16 @@
+<view class="container">
+  <block wx:for="{{menuList}}" wx:key="title" wx:for-item="menu">
+    <view class="menu-section">
+      <text class="section-title">{{menu.title}}</text>
+      <view class="menu-grid">
+        <block wx:for="{{menu.items}}" wx:key="name" wx:for-item="item">
+          <!-- 使用 view 元素绑定点击事件，并将对应的 url 通过 data-url 传递 -->
+          <view class="menu-item" bindtap="onMenuItemTap" data-url="{{item.url}}">
+            <image src="{{item.icon}}"></image>
+            <text>{{item.name}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

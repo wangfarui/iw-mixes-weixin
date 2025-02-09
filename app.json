@@ -1,9 +1,10 @@
 {
-  "entryPagePath": "pages/menu/menu",
+  "entryPagePath": "pages/menu/index",
   "pages": [
-    "pages/menu/menu",
-    "pages/my/my",
-    "pages/login/login"
+    "pages/menu/index",
+    "pages/my/index",
+    "pages/login/index",
+    "pages/bookkeeping/bookkeeping-action/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,13 +15,13 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/menu/menu",
+        "pagePath": "pages/menu/index",
         "text": "菜单",
         "iconPath": "images/menu.png",
         "selectedIconPath": "images/menu_selected.png"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/my/index",
         "text": "我的",
         "iconPath": "images/my.png",
         "selectedIconPath": "images/my_selected.png"

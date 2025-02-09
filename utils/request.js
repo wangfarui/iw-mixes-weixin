@@ -37,7 +37,7 @@ function baseRequest(options, withToken) {
       });
       setTimeout(() => {
         wx.redirectTo({
-          url: '/pages/login/login'
+          url: '/pages/login/index'
         });
       }, 1500);
       return;
@@ -66,7 +66,7 @@ function requestPromise(options, withToken) {
               });
               setTimeout(() => {
                 wx.redirectTo({
-                  url: '/pages/login/login'
+                  url: '/pages/login/index'
                 });
               }, 1500);
             } else {

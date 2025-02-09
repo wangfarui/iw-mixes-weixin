@@ -187,7 +187,7 @@ Page({
         dictUtil.setDictValuesMap(res.data);
         // 跳转到首页
         wx.switchTab({
-          url: '/pages/menu/menu'
+          url: '/pages/menu/index'
         });
       });
   }
